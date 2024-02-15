@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "FullScreen Mode by Jayant",
+  "version": "1.0",
+  "description": "Enable fullscreen mode on websites. Save them to automatically load in fullscreen using 'Ctrl+Shift+Y' and unsave using 'Ctrl+Shift+Z' keys.",
+  "permissions": [
+    "tabs", "storage", "activeTab", "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Fullscreen Extension",
+    "default-icon": "Fullscreenicon.png"
+  },
+
+
+  "icons": {
+    "16": "Fullscreenicon.png",
+    "48": "Fullscreenicon.png",
+    "128": "Fullscreenicon.png"
+  },
+
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
